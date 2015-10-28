@@ -19,27 +19,37 @@ using namespace std;
  *
  * \details
  * Stores four complex numbers that define the Mobius transformation
- *
+ * (az+b)/(cz+d)
  */
 
 class Mobius {
 public:
     /**
-     * \brief Default constructor is the identity transformation.
+     * \brief Default constructor is the identity transformation
      */
     Mobius();
 
+    /**
+     * \brief Construct with the four coefficients as parameters
+     */
     Mobius(complex<float> a, complex<float> b, complex<float> c,
             complex<float>d);
 
+    /**
+     * \brief Apply the transformation to a complex number
+     */
     complex<float> apply(complex<float> z);
 
     Mobius inverse();
-
     complex<float> apply_inv(complex<float> z);
 
+    /**
+     * \brief Return a map to be used by opencv's remapping fn
+     */
     Mat map_x(Mat src);
-
+    /**
+     * \brief Return a map to be used by opencv's remapping fn
+     */
     Mat map_y(Mat src);
 
     void translate(complex<float> v);
@@ -47,8 +57,6 @@ public:
     void dilate(float r);
 
     void invert();
-
-//    void invert(complex<float> center, float radius);
 
 private:
     complex<float> a_;
