@@ -15,8 +15,9 @@ using namespace std;
 
 /**
  * \class Mobius
- * \brief Defines unique Mobius transformations
- *
+ * \brief Each member of the class Mobius defines a Mobius transformation
+ * unique up to complex scaling of its coefficients.
+ * 
  * \details
  * Stores four complex numbers that define the Mobius transformation
  * (az+b)/(cz+d)
@@ -41,14 +42,16 @@ public:
     complex<float> apply(complex<float> z);
 
     Mobius inverse();
+    
     complex<float> apply_inv(complex<float> z);
 
     /**
-     * \brief Return a map to be used by opencv's remapping fn
+     * \brief Return a map for x vals to be used by opencv's remapping fn
      */
     Mat map_x(Mat src);
+    
     /**
-     * \brief Return a map to be used by opencv's remapping fn
+     * \brief Return a map for y vals to be used by opencv's remapping fn
      */
     Mat map_y(Mat src);
 
