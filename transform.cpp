@@ -12,9 +12,6 @@
  char* remap_window = "transformed image";
  int ind = 0;
 
- /// Function Headers
- void update_map( void );
-
  /**
  * @function main
  */
