@@ -112,8 +112,6 @@ Mat Mobius::map_y(Mat src)
     return map;
 }
 
-
-
 void Mobius::translate(complex<float> v)
 {
     a_ = a_ + (v*c_);
@@ -124,6 +122,13 @@ void Mobius::dilate(float r)
 {
     a_ = r*a_;
     b_ = r*b_;
+}
+
+void Mobius::rotate(float theta)
+{
+    complex<float> v = exp( complex<float>(0, theta) );
+    a_ = v*a_;
+    b_ = v*b_;
 }
 
 void Mobius::invert()

@@ -9,7 +9,7 @@
  /// Global variables
  Mat src, dst;
  Mat map_x, map_y;
- char* remap_window = "Remap demo";
+ char* remap_window = "transformed image";
  int ind = 0;
 
  /// Function Headers

@@ -56,6 +56,8 @@ public:
 
     void dilate(float r);
 
+    void rotate(float theta);
+
     void invert();
 
 private:

@@ -1,5 +1,7 @@
 cmake_minimum_required(VERSION 2.8)
-project( Transform )
+project( Mobius )
 find_package( OpenCV REQUIRED )
 add_executable( Transform transform.cpp mobius.cpp )
+add_executable( Webcam webcam.cpp mobius.cpp )
 target_link_libraries( Transform ${OpenCV_LIBS} )
+target_link_libraries( Webcam ${OpenCV_LIBS} )
